@@ -2,8 +2,8 @@ const output = (str, regex, target) => {
   target.innerHTML = str.replace(regex, str => `<span>${str}</span>`);
 };
 
-const str = `cat mat bat Hat ?at 0at`;
-const regexlit = /[a-zA-Z0-9?]at/g;
+const str = `Aeiou $100 55.5%`;
+const regexlit = /[\S]/g;
 
 output(str, regexlit, document.querySelector("pre"));
 
