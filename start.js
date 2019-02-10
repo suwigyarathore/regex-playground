@@ -1,3 +1,7 @@
+const output = (str, regex, target) => {
+  target.innerHTML = str.replace(regex, str => `<span>${str}</span>`);
+};
+
 const str = "Is this is me";
 const regex = new RegExp("is");
 const regexlit = /is/gi;
@@ -14,3 +18,5 @@ console.log(str.match(regexlit));
 console.log(str.replace(regexlit, str => "XX"));
 
 console.log(str.search(regexlit));
+
+output(str, regexlit, document.querySelector("pre"));
