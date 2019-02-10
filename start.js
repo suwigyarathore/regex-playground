@@ -2,11 +2,11 @@ const output = (str, regex, target) => {
   target.innerHTML = str.replace(regex, str => `<span>${str}</span>`);
 };
 
-const str = `Cat
-sat
-on
-hat.`;
-const regexlit = /\./g;
+const str = `http://egghead.io
+not a web address
+http://
+https://egghead.io more`;
+const regexlit = /https?:\/\//g;
 
 output(str, regexlit, document.querySelector("pre"));
 
