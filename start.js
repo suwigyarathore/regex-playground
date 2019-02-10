@@ -2,10 +2,15 @@ const output = (str, regex, target) => {
   target.innerHTML = str.replace(regex, str => `<span>${str}</span>`);
 };
 
-const str = `Aeiou $100 55.5%`;
-const regexlit = /[\S]/g;
+const str = `800-456-7890
+(555) 456-7890
+4564567890`;
+
+const regexlit = /\(?(\d{3})\)?[?\s-]?(\d{3})[\s-]?(\d{4})/g;
 
 output(str, regexlit, document.querySelector("pre"));
+
+console.log(str.replace(regexlit, 'area code: $1'))
 
 // const regexlit = /is/gi;
 
