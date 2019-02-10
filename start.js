@@ -2,12 +2,9 @@ const output = (str, regex, target) => {
   target.innerHTML = str.replace(regex, str => `<span>${str}</span>`);
 };
 
-const str = `foo
-foobar
-foobaz
-fooboo`;
+const str = `it was the the thing thing`
 
-const regexlit = /foo(?=bar|boo)/g;
+const regexlit = /(\w+)\s?(?=\1)/g;
 
 output(str, regexlit, document.querySelector("pre"));
 
