@@ -2,9 +2,12 @@ const output = (str, regex, target) => {
   target.innerHTML = str.replace(regex, str => `<span>${str}</span>`);
 };
 
-const str = `it was the the thing thing`
+const str = `12/1/16
+12-16-13
+11/12/16
+12-12-2016`;
 
-const regexlit = /(\w+)\s?(?=\1)/g;
+const regexlit = /^12.+16$/gm;
 
 output(str, regexlit, document.querySelector("pre"));
 
